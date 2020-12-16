@@ -23,12 +23,12 @@ LABEL org.label-schema.maintainer="Lucas Halbert <contactme@lhalbert.xyz>" \
 MAINTAINER Lucas Halbert <contactme@lhalbert.xyz>
 
 # __CROSS__COPY static qemu binary for cross-platform support
-__CROSS__COPY qemu-${QEMU_ARCH}-static /usr/bin/
+ __CROSS__COPY qemu-${QEMU_ARCH}-static /usr/bin/
 
 RUN apk add --no-cache --update ca-certificates curl
 
 # __CROSS__ Delete static qemu binary
-__CROSS__RUN rm -f /usr/bin/qemu-${QEMU_ARCH}-static
+ __CROSS__RUN rm -f /usr/bin/qemu-${QEMU_ARCH}-static
 
 COPY docker-entrypoint.sh /usr/bin/
 

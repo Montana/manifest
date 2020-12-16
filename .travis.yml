@@ -1,4 +1,5 @@
 ---
+---
 language: shell
 
 sudo: required
@@ -26,11 +27,14 @@ before_script:
   - export build_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
   - export vcs_ref=$(git rev-parse --short HEAD)
 
+  # Montana's crucial workaround
 script:
   - chmod u+x ./travis.sh
+  - export DOCKER_CLI_EXPERIMENTAL=enabled
 
 after_success:
   - docker images
+  - docker manifest inspect lucashalbert/curl
 
 branches:
   only:
