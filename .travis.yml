@@ -13,4 +13,15 @@ before_install:
 install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
   - docker buildx create --name xbuilder --use
-script: bash ci.sh
+script: 
+- bash ci.sh
+- docker build --tag $IMAGE:$BASETAG-$ARCHITECTURE .
+- docker push $IMAGE:$BASETAG-$ARCHITECTURE
+- docker rmi $IMAGE:$BASETAG -f
+- docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-s390x
+- docker manifest annotate $IMAGE:$BASETAG $IMAGE:$BASETAG-$ARCHITECTURE --os linux --arch $ARCHITECTURE
+- docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-s390x
+- docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-ppc64le
+- docker manifest annotate $IMAGE $IMAGE:amd64 --os linux --arch amd64
+
+- docker manifest push $IMAGE:$BASETAG --purge
