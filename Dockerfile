@@ -1,10 +1,35 @@
-sudo docker run \
-  --volume=/:/rootfs:ro \
-  --volume=/var/run:/var/run:ro \
-  --volume=/sys:/sys:ro \
-  --volume=/var/lib/docker/:/var/lib/docker:ro \
-  --volume=/dev/disk/:/dev/disk:ro \
-  --publish=8080:8080 \
-  --detach=true \
-  --name=cadvisor \
-  zcube/cadvisor:latest
+FROM __BASEIMAGE_ARCH__/alpine
+
+ENV CURL_VER=__CURL_VER__ \
+	ARCH=__BASEIMAGE_ARCH__ \
+    BUILD_DATE=__BUILD_DATE__ \
+    VCS_REF=__VCS_REF__ \
+    __CROSS__QEMU_ARCH=__QEMU_ARCH__ \
+    PARAMS=""
+
+LABEL org.label-schema.maintainer="Lucas Halbert <contactme@lhalbert.xyz>" \
+      org.label-schema.build-date=${BUILD_DATE} \
+      org.label-schema.name="curl" \
+      org.label-schema.vendor="lucashalbert" \
+      org.label-schema.description="A multi-architecture curl image built on alpine linux." \
+      org.label-schema.version=${CURL_VER} \
+      org.label-schema.architecture=${ARCH} \
+      org.label-schema.vcs-ref=${VCS_REF} \
+      org.label-schema.vcs-url="https://github.com/lucashalbert/docker-curl" \
+      org.label-schema.docker.cmd="docker run -t --rm lucashalbert/curl https://curl.haxx.se" \
+      org.label-schema.docker.cmd.help="docker run --rm lucashalbert/curl --help" \
+      org.label-schema.usage="https://curl.haxx.se/docs/manpage.html" \
+      org.label-schema.schema-version="1.0"
+MAINTAINER Lucas Halbert <contactme@lhalbert.xyz>
+
+# __CROSS__COPY static qemu binary for cross-platform support
+__CROSS__COPY qemu-${QEMU_ARCH}-static /usr/bin/
+
+RUN apk add --no-cache --update ca-certificates curl
+
+# __CROSS__ Delete static qemu binary
+__CROSS__RUN rm -f /usr/bin/qemu-${QEMU_ARCH}-static
+
+COPY docker-entrypoint.sh /usr/bin/
+
+ENTRYPOINT ["/usr/bin/curl"]
