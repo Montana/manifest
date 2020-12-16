@@ -59,7 +59,7 @@ branches:
     - /^*-v[0-9]/
     - /^v\d.*$/
     
-# .travis.yml created by Montana Mendy for Travis CI & IBM
+    # .travis.yml created by Montana Mendy for Travis CI & IBM
 ```
 
 ## Setting up `env vars`
