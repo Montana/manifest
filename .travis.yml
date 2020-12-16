@@ -31,6 +31,7 @@ script:
 
 after_success:
   - docker images
+  - docker manifest inspect lucashalbert/curl
 
 branches:
   only:
