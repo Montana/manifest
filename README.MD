@@ -6,7 +6,7 @@ First thing is you'll need to set your `docker env vars`, you can do this by onc
 travis login --pro
 ```
 
-## Setting up env vars
+## Setting up `env vars`
 
 You can use your GitHub auth token, or just username/password, once logged in set the `env vars`: 
 
@@ -32,7 +32,7 @@ export DOCKER_CLI_EXPERIMENTAL=enabled
 
 ## Manifest JSON (amd64, arm, s390x, ppc64le). 
 
-```basj
+```json
 "schemaVersion": 2,
    "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
    "manifests": [
