@@ -3,7 +3,63 @@
 First thing is you'll need to set your `docker env vars`, you can do this by once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
 ```bash
-travis login --pro
+travis login --pro --github-token (your github token) 
+```
+
+Then just to make sure you're logged into the proper Travis CI account run: 
+
+```bash
+travis whatsup
+```
+
+It's just my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. 
+
+## The .travis.yml file for Docker Manifests 
+
+```yaml
+---
+language: shell
+sudo: required
+dist: xenial
+os: linux
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+env:
+  - DEPLOY=false repo=lucashalbert/curl docker_archs="amd64 ppc64le s390x"
+
+install:
+  - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+before_script:
+  - export ver=$(curl -s "https://pkgs.alpinelinux.org/package/edge/main/x86_64/curl" | grep -A3 Version | grep href | sed 's/<[^>]*>//g' | tr -d " ")
+  - export build_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  - export vcs_ref=$(git rev-parse --short HEAD)
+
+  # Montana's crucial workaround
+  
+script:
+  - chmod u+x ./travis.sh
+  - export DOCKER_CLI_EXPERIMENTAL=enabled
+
+after_success:
+  - docker images
+  - docker manifest inspect lucashalbert/curl
+
+branches:
+  only:
+    - master
+  except:
+    - /^*-v[0-9]/
+    - /^v\d.*$/
+    
+# .travis.yml created by Montana Mendy for Travis CI & IBM
 ```
 
 ## Setting up `env vars`
@@ -106,5 +162,7 @@ export DOCKER_CLI_EXPERIMENTAL=enabled
 }
 Done. Your build exited with 0.
 ```
+For more cursory info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
 
-More info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
+### Authors 
+Montana Mendy - [Montana](https://github.com/Montana)
