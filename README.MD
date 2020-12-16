@@ -1,10 +1,12 @@
 # Manifest with Travis CI 
 
-## First thing is you'll need to set your `docker env vars`, you can do this by once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
+First thing is you'll need to set your `docker env vars`, you can do this by once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
 ```bash
 travis login --pro
 ```
+
+## Setting up env vars
 
 You can use your GitHub auth token, or just username/password, once logged in set the `env vars`: 
 
@@ -14,6 +16,8 @@ travis env set DOCKER_PASSWORD pwd
 ```
 
 That will now set both your Docker username/password as env vars. 
+
+## Manifest
 
 In your Dockerfile, do the classic configurations, then you'll want to add (if you want to build s390x, ppc64le): 
 
