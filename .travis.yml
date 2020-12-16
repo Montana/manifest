@@ -1,3 +1,4 @@
+---
 dist: xenial
 sudo: required
 env:
@@ -12,8 +13,4 @@ before_install:
 install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
   - docker buildx create --name xbuilder --use
-script:
-  - ci.sh
-  - docker version
-  - make prepare
-  - make build-push
+script: bash ci.sh
