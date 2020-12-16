@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 IMAGE="2tefan/multiarch-test"
