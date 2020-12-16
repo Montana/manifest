@@ -36,3 +36,6 @@ docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IM
 docker manifest annotate $IMAGE $IMAGE:amd64 --os linux --arch amd64
 
 docker manifest push $IMAGE:$BASETAG --purge
+```
+
+More info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
