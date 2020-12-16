@@ -6,10 +6,10 @@ BASETAG="test"
 
 case "$(arch)" in
     aarch64)
-        ARCHITECTURE="arm64"
+        ARCHITECTURE="s390x"
 	    ;;
     x86_64)
-        ARCHITECTURE="amd64"
+        ARCHITECTURE="ppc64le"
         ;;
     *)
         echo "ERROR: unsupported architecture: $(arch)"
@@ -23,10 +23,11 @@ docker push $IMAGE:$BASETAG-$ARCHITECTURE
 
 # Creating manifest for basetag
 docker rmi $IMAGE:$BASETAG -f
-docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-arm64
+docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-s390x
 
 docker manifest annotate $IMAGE:$BASETAG $IMAGE:$BASETAG-$ARCHITECTURE --os linux --arch $ARCHITECTURE
-# docker manifest annotate $IMAGE $IMAGE:amd64 --os linux --arch amd64
-# docker manifest annotate $IMAGE $IMAGE:arm64 --os linux --arch arm64
+docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-s390x
+docker manifest create $IMAGE:$BASETAG --amend $IMAGE:$BASETAG-amd64 --amend $IMAGE:$BASETAG-ppc64le
+docker manifest annotate $IMAGE $IMAGE:amd64 --os linux --arch amd64
 
 docker manifest push $IMAGE:$BASETAG --purge
