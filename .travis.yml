@@ -1,6 +1,8 @@
 ---
 language: shell
 
+sudo: required
+
 dist: xenial
 
 os: linux
@@ -25,7 +27,7 @@ before_script:
   - export vcs_ref=$(git rev-parse --short HEAD)
 
 script:
-  - ./travis.sh
+  - chmod u+x ./travis.sh
 
 after_success:
   - docker images
