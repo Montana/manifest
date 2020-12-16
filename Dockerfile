@@ -3,18 +3,14 @@
 IMAGE="2tefan/multiarch-test"
 BASETAG="test"
 
-case "$(arch)" in
-    aarch64)
-        ARCHITECTURE="s390x"
-	    ;;
-    x86_64)
-        ARCHITECTURE="ppc64le"
-        ;;
-    *)
-        echo "ERROR: unsupported architecture: $(arch)"
-	    exit 1
-	    ;;
-esac
+arch_to_image() {
+	case $1 in
+		x86_64) echo amd64 ;;
+		ppc64le) echo ppc64le ;;
+		s390x) echo s390x ;;
+		*) die "Unknown arch detected: \"$1\""
+	esac
+}
 
 # Building & pushing to dockerhub
 docker build --tag $IMAGE:$BASETAG-$ARCHITECTURE .
