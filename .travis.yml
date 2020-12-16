@@ -1,16 +1,38 @@
 ---
+language: shell
+
 dist: xenial
-sudo: required
+
+os: linux
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
 env:
-  global:
-    - DOCKER_REPO=<2tefan/multiarch-test>
-before_install:
-  - curl -fsSL https://get.docker.com | sh
-  - echo '{"experimental":"enabled"}' | sudo tee /etc/docker/daemon.json
-  - mkdir -p $HOME/.docker
-  - echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
-  - sudo service docker start
+  - DEPLOY=false repo=lucashalbert/curl docker_archs="amd64 ppc64le s390x"
+
 install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-  - docker buildx create --name xbuilder --use
-script: bash ci.sh
+
+before_script:
+  - export ver=$(curl -s "https://pkgs.alpinelinux.org/package/edge/main/x86_64/curl" | grep -A3 Version | grep href | sed 's/<[^>]*>//g' | tr -d " ")
+  - export build_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  - export vcs_ref=$(git rev-parse --short HEAD)
+
+script:
+  - ./travis.sh
+
+after_success:
+  - docker images
+
+branches:
+  only:
+    - master
+  except:
+    - /^*-v[0-9]/
+    - /^v\d.*$/
