@@ -76,6 +76,12 @@ You can use your GitHub auth token, or just username/password, once logged in se
 travis env set DOCKER_USERNAME username
 travis env set DOCKER_PASSWORD pwd
 ```
+You'll also want to make sure you're logged into Docker, you can do this via: 
+
+```bash
+docker login 
+``` 
+![login](login.png)
 
 That will now set both your Docker username/password as env vars. 
 
