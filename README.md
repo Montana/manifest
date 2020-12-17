@@ -98,6 +98,15 @@ Alternatively you can run this in your project directory tree via:
 export DOCKER_CLI_EXPERIMENTAL=enabled
 ```
 
+The two lines critical in the `.travis.yml` for the manifests to `print` are the following:
+
+```yaml
+after_success:
+  - docker images
+  - docker manifest inspect --verbose lucashalbert/curl
+```
+In theory, this doesn't have to be `after_success:` but we want to make the most sense of the `.travis.yml` logs. 
+
 ## Manifest JSON (amd64, arm, s390x, ppc64le). 
 
 ```json
