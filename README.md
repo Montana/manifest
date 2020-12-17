@@ -1,3 +1,5 @@
+![Header](header.png)
+
 [![Build Status](https://travis-ci.com/Montana/dat-manifest.svg?branch=master)](https://travis-ci.com/Montana/dat-manifest)
 
 # Manifest with Travis CI 
