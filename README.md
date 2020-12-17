@@ -162,6 +162,15 @@ export DOCKER_CLI_EXPERIMENTAL=enabled
 }
 Done. Your build exited with 0.
 ```
+
+## Docker Manifest 
+
+The `docker manifest` command by itself performs no action, in theory it's `null`. In order to operate on a manifest or manifest list, one of the subcommands must be used.
+
+A single manifest is information about an image, such as `layers`, `size`, and `digest`. The docker manifest command also gives users additional information such as the `OS` and `arch` an image was built for.
+
+![Manifest](manifest.png)
+
 For more cursory info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
 
 ### Authors 
