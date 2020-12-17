@@ -104,7 +104,10 @@ The two lines critical in the `.travis.yml` for the manifests to `print` are the
 after_success:
   - docker images
   - docker manifest inspect --verbose lucashalbert/curl
+  - docker manifest inspect --insecure lucashalbert/curl
 ```
+You want to use the `--verbose` and `--insecure` flags, to get as much `manifest` information as possible. This is true with any build. 
+
 In theory, this doesn't have to be `after_success:` but we want to make the most sense of the `.travis.yml` logs. 
 
 ## Manifest JSON (amd64, arm, s390x, ppc64le). 
