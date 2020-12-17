@@ -1,6 +1,6 @@
 # Manifest with Travis CI 
 
-First thing, you'll need to set your `docker env vars`, you can do this by once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
+First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
 ```bash
 travis login --pro --github-token (your github token) 
