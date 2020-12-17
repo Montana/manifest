@@ -56,7 +56,7 @@ script:
 
 after_success:
   - docker images
-  - docker manifest inspect lucashalbert/curl
+  - docker manifest inspect --verbose lucashalbert/curl
 
 branches:
   only:
@@ -178,6 +178,12 @@ A single manifest is information about an image, such as `layers`, `size`, and `
 ![Manifest](manifest.png)
 
 For more cursory info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
+
+## Docker manifest inspect (verbose)
+
+When setting `docker manifest inspect` with a `verbose` flag, it's going to be showing you a bit more information. So I've displayed this in the following screenshot with the `manifests` highlighted. 
+
+![Verbose](manifest_build.png)
 
 ### Authors 
 Montana Mendy - [Montana](https://github.com/Montana)
