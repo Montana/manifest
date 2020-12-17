@@ -18,7 +18,7 @@ It's just my own personal opinion, when pushing for `manifests` you should alway
 lucashalbert/curl
 ```
 
-This is the perfect package to show an multiarch docker image using `ppc64le`, `s390x`, and more. 
+This is the perfect package (`cURL`) to show an multiarch docker image using `ppc64le`, `s390x`, and more. 
 
 ## The .travis.yml file for Docker Manifests 
 
