@@ -96,6 +96,18 @@ Following is a sample `config.json` file:
 }
 ```
 
+### Using experimental CLI features 
+
+I will show you other methods in doing this, but if you're going to do it through docker's `config.json`, look for the following:
+
+```json
+{
+  "experimental": "enabled",
+  "debug": true
+}
+```
+This for example will make `manifestation` possible, when calling `docker manifest`. 
+
 ## Using Travis to display the Manifests 
 
 ```yaml
