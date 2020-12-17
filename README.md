@@ -108,7 +108,9 @@ after_success:
 ```
 You want to use the `--verbose` and `--insecure` flags, to get as much `manifest` information as possible. This is true with any build. 
 
-In theory, this doesn't have to be `after_success:` but we want to make the most sense of the `.travis.yml` logs. 
+In theory, this doesn't have to be `after_success:` but we want to make the most sense of the `.travis.yml` logs.  Let's see if in particular for example, we can't find the `s390x` manifest: 
+
+![s390x](s390x.png)
 
 ## Manifest JSON (amd64, arm, s390x, ppc64le). 
 
