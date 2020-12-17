@@ -83,7 +83,7 @@ docker login
 ``` 
 ![login](login.png)
 
-That will now set both your Docker username/password as env vars. 
+That will now set both your Docker username/password as `env vars`. 
 
 ## Manifest
 
@@ -197,7 +197,7 @@ Done. Your build exited with 0.
 
 The `docker manifest` command by itself performs no action, in theory it's `null`. In order to operate on a manifest or manifest list, one of the subcommands must be used.
 
-A single manifest is information about an image, such as `layers`, `size`, and `digest`. The docker manifest command also gives users additional information such as the `OS` and `arch` an image was built for.
+A single manifest is information about an image, such as `layers`, `size`, and `digest`. The docker manifest command also gives users additional information such as the `OS` and `arch` an image was built for:
 
 ![Manifest](manifest.png)
 
