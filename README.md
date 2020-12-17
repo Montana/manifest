@@ -12,7 +12,13 @@ Then just to make sure you're logged into the proper Travis CI account run:
 travis whatsup
 ```
 
-It's just my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. 
+It's just my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. In this particular example, I grabbed from the `Docker Hub` the following package: 
+
+```bash
+lucashalbert/curl
+```
+
+This is the perfect package to show an multiarch docker image using `ppc64le`, `s390x`, and more. 
 
 ## The .travis.yml file for Docker Manifests 
 
