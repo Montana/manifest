@@ -209,5 +209,7 @@ When setting `docker manifest inspect` with a `verbose` flag, it's going to be s
 
 ![Verbose](manifest_build.png)
 
+Alternatively you can `grep` the `manifests`. As you can see though, they are in the logs, with a passing build.
+
 ### Authors 
 Montana Mendy - [Montana](https://github.com/Montana)
