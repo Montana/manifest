@@ -112,7 +112,7 @@ This for example will make `manifestation` possible, when calling `docker manife
 
 ## Working with insecure registries
 
-The `manifest` command interacts solely with a Docker registry, and _solely_ a Docker registry. Thus, it has no way to query the engine for the list of allowed `insecure` registries. To allow the CLI to interact with an `insecure` registry, some `docker manifest` commands have an --insecure flag, and you'll see that we used the `--insecure` flag in our `.travis.yml` file for this long 'how-to'. For each transaction (e.g. create, which queries a registry, the `--insecure` flag must be specified.) If it's not, the latter will take precedent, and your build will error.
+The `manifest` command interacts solely with a Docker registry, and _solely_ a Docker registry. Thus, it has no way to query the engine for the list of allowed `insecure` registries. To allow the CLI to interact with an `insecure` registry, some `docker manifest` commands have an --insecure flag, and you'll see that we used the `--insecure` flag in our `.travis.yml` file for this long 'how-to'. For each transaction (e.g. create, which queries a registry, the `--insecure` flag must be specified.) If it's not, the latter will take precedent, and your build will error within Travis.
 
 This flag tells the CLI that this registry call may ignore security concerns like missing or self-signed certificates using a command like:
 
