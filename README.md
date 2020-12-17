@@ -509,5 +509,48 @@ main "$1" "$2" "$3"
 
 Reminder the commands on the left are all `parent commands` and have `flags` that can be attached to them for different behaviors/functions.
 
+## Annotations 
+
+Annotations are allowed in docker for the reason of defining architecture and operating system (overriding the image’s current values), os features, and an architecture variant, this takes precedent over `env vars` in the docker protocol heirarchy. An example of using `annotation` would look something like:
+
+```bash
+docker manifest annotate 00.00.00.000:5000/cool-IBM-test:v1 00.00.00.00:5000/cool-IBM-test --arch ppc64le, s390x
+```
+
+In this example, the only `archs` that are going to be building is: 
+
+```bash
+ppc64le
+s390x
+```
+
+## Inspect a manifest list (`cool-IBM-test`) 
+
+```json
+ docker manifest inspect cool-IBM-test:v1
+{
+         "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+         "size": 425,
+         "digest": "sha256:df436846483aff62bad830b730a0d3b77731bcf98ba5e470a8bbb8e9e346e4e8",
+         "platform": {
+            "architecture": "ppc64le",
+            "os": "linux"
+         }
+      },
+      {
+         "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+         "size": 425,
+         "digest": "sha256:5bb8e50aa2edd408bdf3ddf61efb7338ff34a07b762992c9432f1c02fc0e5e62",
+         "platform": {
+            "architecture": "s390x",
+            "os": "linux"
+         }
+      }
+   ]
+}
+```
+
+Phew, that was a lot! This should now give you the opportunity to mix and match `docker manifest` with Travis. I haven't seen much on this on GitHub or really anywhere. So it's really my pleasure to share my custom `.travis.yml` file, and show you what works, and I left all my history open -- so you can see where things didn't go so smoothly! I hope you enjoyed the read.
+
 ### Authors 
-Montana Mendy - [Montana](https://github.com/Montana)
+Montana Mendy - [Montana](https://github.com/Montana) (Rails Engineer/DevRel @ Travis CI) 
