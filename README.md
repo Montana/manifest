@@ -22,7 +22,31 @@ lucashalbert/curl
 
 This is the perfect package (`cURL`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
 
-## The .travis.yml file for Docker Manifests 
+## Docker configuration files 
+
+By default, the Docker command line stores its configuration files in a directory called `.docker` within your `$HOME` directory, this can obviously be changed, but for now we are talking by standard practices. 
+
+Docker manages most of the files in the configuration directory and you should **not modify** them. However, you can modify the `config.json` file to control certain aspects of how the docker command behaves, (e.g. flags, manifest, etc). 
+
+You can modify the docker command behavior using `environment variables`, you'll see me use the term `env vars` (it's the same meaning), or CLI options. You can also use options within `config.json` to modify some of the same exact behavior. If an `env var` and the --config flag are set, the flag takes precedent over the `env var`. CLI options override `env vars` and `env vars` override properties you specify in a `config.json` file. It's a bit of give and take. 
+
+Overriding a single value in your `.env` file is reasonably simple: just set an `env var` with the same name in your shell before rerunning docker.
+
+### Change the `.docker` directory
+
+You can close out docker, reopen terminal and run: 
+
+```bash
+docker --config ~/testconfigs/ ps
+```
+
+This particular flag only applies to whatever command is being called. For persistent config, you can set the `DOCKER_CONFIG` `env var` in your shell (e.g. ~/.profile or ~/.bashrc)(Between `zsh`, `bashrc`). The example below sets the new directory to be `HOME/newdir/.docker.`:
+
+```bash
+echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
+```
+
+## Using Travis to display the Manifests 
 
 ```yaml
 ---
