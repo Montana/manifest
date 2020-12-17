@@ -165,6 +165,7 @@ travis env set DOCKER_USERNAME username
 travis env set DOCKER_PASSWORD pwd
 ```
 You should see this in your build at some point, this is reassurance your `env vars` got saved.
+
 ![envvars](dockervars.png)
 
 You'll also want to make sure you're logged into Docker, you can do this via: 
