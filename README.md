@@ -112,6 +112,10 @@ In theory, this doesn't have to be `after_success:` but we want to make the most
 
 ![s390x](s390x.png)
 
+On the flip side, we can easily scroll through the `travis logs` and lookout for the `manifest` of `ppc64le`: 
+
+![ppc64le](ppc64le.png) 
+
 ## Manifest JSON (amd64, arm, s390x, ppc64le). 
 
 ```json
