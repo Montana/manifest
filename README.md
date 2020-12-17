@@ -46,7 +46,7 @@ This particular flag only applies to whatever command is being called. For persi
 echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
 ```
 
-### Sample docker `config.json` file: 
+### Sample docker `config.json` file
 
 Following is a sample `config.json` file:
 
@@ -204,7 +204,7 @@ On the flip side, we can easily scroll through the `travis logs` and lookout for
 
 ![ppc64le](ppc64le.png) 
 
-## Manifest JSON (amd64, arm, s390x, ppc64le). 
+## Manifest JSON (amd64, arm, s390x, ppc64le)
 
 ```json
 "schemaVersion": 2,
