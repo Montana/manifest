@@ -12,7 +12,7 @@ Then just to make sure you're logged into the proper Travis CI account run:
 travis whatsup
 ```
 
-It's just my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. In this particular example, I grabbed from the `Docker Hub` the following package: 
+It's my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. In this particular example, I grabbed from the `Docker Hub` the following package: 
 
 ```bash
 lucashalbert/curl
