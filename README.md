@@ -307,7 +307,6 @@ A single manifest is information about an image, such as `layers`, `size`, and `
 
 ![Manifest](manifest.png)
 
-For more cursory info on [docker manifest](https://docs.docker.com/engine/reference/commandline/manifest/).
 
 ## Docker manifest inspect (verbose)
 
