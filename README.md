@@ -222,6 +222,35 @@ On the flip side, we can easily scroll through the `travis logs` and lookout for
 
 ![ppc64le](ppc64le.png) 
 
+## Create and push a `manifest list`
+
+In order to spawn a `manifest list`, you first create the manifest list locally (localhost) by specifying the constituent images, (you can check them using `docker -ps -a`) if you would like to have included in your `manifest list`. Keep in mind that this is pushed to a docker registry, so if you want to push to a registry other than the docker registry, you need to create your manifest list with the registry name or IP and port. This is similar to tagging an image and pushing it to a foreign registry.
+
+After you have created your local copy of the `manifest list`, you may optionally annotate it. Annotations allowed are the architecture and operating system (e.g. `ppc64le`, `linux`) (overriding the image’s current values, and again this is from the heirarchy of docker protocols), `os features`, and an the `architecture variant` you're wanting to use.
+
+```bash
+docker manifest create 0.0.0.0:5000/cool-ibm-test:v1 \
+```
+Then you should see: 
+
+```bash
+  00.00.00.00:5000/cool-ibm-test-ppc64le-linux:v1 \
+  0.00.00.00:5000/cool-ibm-test-s390x-linux:v1 \
+  0.00.00.00:5000/cool-ibm-test-amd64-linux:v1 \
+  ```
+Lastly, you need to `push` your `docker manifest` list to the desired registry. Below are descriptions of these three commands, and an example putting them all together:
+
+```bash
+docker manifest annotate 00.00.00.00:5000/cool-ibm-test-linux:v1 \ 00.00.00.00:5000/cool-ibm-test-linux:v1 \ --arch ppc64le
+```
+ 
+That's really it for `pushing` a `manifest`. There's also arbitrary flags, and the docker heirarch protocol, which are well explained in this document.
+
+Created manifest list 45.55.81.106:5000/coolapp:v1
+```
+
+
+
 ## Manifest JSON (amd64, arm, s390x, ppc64le)
 
 ```json
@@ -527,7 +556,7 @@ Reminder the commands on the left are all `parent commands` and have `flags` tha
 Annotations are allowed in docker for the reason of defining architecture and operating system (overriding the image’s current values), os features, and an architecture variant, this takes precedent over `env vars` in the docker protocol heirarchy. An example of using `annotation` would look something like:
 
 ```bash
-docker manifest annotate 00.00.00.000:5000/cool-IBM-test:v1 00.00.00.00:5000/cool-IBM-test --arch ppc64le, s390x
+docker manifest annotate 00.00.00.000:5000/cool-ibm-test:v1 00.00.00.00:5000/cool-ibm-test --arch ppc64le, s390x
 ```
 
 In this example, the only `archs` that are going to be building is: 
@@ -537,10 +566,10 @@ ppc64le
 s390x
 ```
 
-## Inspect a manifest list (`cool-IBM-test`) 
+## Inspect a manifest list (`cool-ibm-test`) 
 
 ```json
- docker manifest inspect cool-IBM-test:v1
+ docker manifest inspect cool-ibm-test:v1
 {
          "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
          "size": 425,
