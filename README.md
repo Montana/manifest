@@ -110,6 +110,25 @@ I will show you other methods in doing this, but if you're going to do it throug
 ```
 This for example will make `manifestation` possible, when calling `docker manifest`. 
 
+## Using manifest wthout installation
+
+If you want to use `manifest` for simple query operations? For example, maybe you only want to query if a specific image:tag combination is a manifest list entry or not, something I call a 'if or that' query. If so, what platforms are listed in the manifest itself.
+
+You can consume this feature of `manifest` without installing the binary as long as you are querying public (e.g. not private/authentication-requiring DockerHub registries, and secure ones not insecure ones). This can be done in a different way by another tool called `mquery`. Using `mquery` you can query the Docker image itself using these commands: 
+
+You can use mquery via a multi-platform image currently located on DockerHub as mplatform/mquery:latest. For example, you can query the mquery image itself with the following command:
+
+```bash
+docker run --rm mplatform/mquery mplatform/mquery
+Image: mplatform/mquery
+ * Manifest List: Yes
+ * Supported platforms:
+   - linux/ppc64le
+   - linux/s390x
+   ```
+
+For reference, the  `mquery` program in itself is a small Golang program that queries any functions and calls `manifest` while running via [OpenWhisk](https://openwhisk.apache.org/) from Apache in [IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk/index.html#getting-started-with-cloud-functions). 
+
 ## Working with insecure registries
 
 The `manifest` command interacts solely with a Docker registry, and _solely_ a Docker registry. Thus, it has no way to query the engine for the list of allowed `insecure` registries. To allow the CLI to interact with an `insecure` registry, some `docker manifest` commands have an --insecure flag, and you'll see that we used the `--insecure` flag in our `.travis.yml` file for this long 'how-to'. For each transaction (e.g. create, which queries a registry, the `--insecure` flag must be specified.) If it's not, the latter will take precedent, and your build will error within Travis.
