@@ -226,7 +226,7 @@ On the flip side, we can easily scroll through the `travis logs` and lookout for
 
 In order to spawn a `manifest list`, you first create the manifest list locally (localhost) by specifying the constituent images, (you can check them using `docker -ps -a`) if you would like to have included in your `manifest list`. Keep in mind that this is pushed to a docker registry, so if you want to push to a registry other than the docker registry, you need to create your manifest list with the registry name or IP and port. This is similar to tagging an image and pushing it to a foreign registry.
 
-After you have created your local copy of the `manifest list`, you may optionally annotate it. Annotations allowed are the architecture and operating system (e.g. `ppc64le`, `linux`) (overriding the image’s current values, and again this is from the heirarchy of docker protocols), `os features`, and an the `architecture variant` you're wanting to use.
+After you have created your local copy of the `manifest list`, you may optionally annotate it. Annotations allowed are the architecture and operating system (e.g. `ppc64le`, `linux`) (overriding the image’s current values, and again this is from the heirarchy of docker protocols), `os features`, and an the `architecture variant` you're wanting to use:
 
 ```bash
 docker manifest create 0.0.0.0:5000/cool-ibm-test:v1 \
