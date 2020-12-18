@@ -133,11 +133,22 @@ WORKDIR /root/
 COPY --from=build /go/src/app .
 CMD ["./app"]
 ```
-A table made, to graphically show you the definition of `parent command` for all you visual learners out there, I know I am. 
+A table made, to graphically show you the definition of `parent command` for all you visual learners out there, I know I am:
 
 | Command | Description                          |
 |---------|--------------------------------------|
 | docker  | The base command for the Docker CLI. |
+
+## Child commands in Docker as it pertains to `manifest` 
+
+Sometimes it's good to regroup, and put all command in one compact table, we can get lost when we are running `docker manifest` in variant. These tables will be great to go back and look at if you have questions about what a command does later. I've made one for the `child` commands for docker `manifest`:
+
+| Child commands           | Description                                                           |
+|--------------------------|-----------------------------------------------------------------------|
+| docker manifest annotate | Add additional information to a local image manifest                  |
+| docker manifest create   | Create a local manifest list for annotating and pushing to a registry |
+| docker manifest inspect  | Display an image manifest, or manifest list                           |
+| docker manifest push     | Push a manifest list to a repository                                  |
 
 ## Using Travis to display the Manifests 
 
