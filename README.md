@@ -10,7 +10,7 @@ First thing, you'll need to set your `docker env vars`, you can do this once the
 travis login --pro --github-token (your github token) 
 ```
 
-Then just to make sure you're logged into the proper Travis CI account run: 
+Then just to make sure you're logged into the proper Travis account run: 
 
 ```bash
 travis whatsup
