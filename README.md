@@ -48,6 +48,19 @@ This particular flag only applies to whatever command is being called. For persi
 echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
 ```
 
+# Why I use cron jobs 
+
+For a build like this, the `cron` and at a services level, it can enable programmers to schedule tasks to run at a specific time in the future. You can think of it as setting a coffee maker. The at service specifies a one-time task that runs at a certain time. The `cron` service can schedule tasks on a repetitive basis and in rapid succession, such as daily, weekly, or monthly tasks that involve almost anything:
+
+You'll see some of these `dcrons` around, you'll start why I _personally_ use them. They are _NOT_ for everybody. I made a table of the most common scheduler type crons:
+
+| Version          | Edit crontab | Remove crontab       | New crontab   | List cron-jobs |
+|------------------|--------------|----------------------|---------------|----------------|
+| dcron            | crontab -e   | crontab -d [user]    | crontab file  | crontab -l     |
+| fcron            | fcrontab -e  | fcrontab -r [user]   | fcrontab file | fcrontab -l    |
+| cronie and bcron | crontab -e   | crontab -r -u [user] | crontab file  | crontab -l     |
+
+
 ### Sample docker `config.json` file
 
 Following is a sample `config.json` file:
