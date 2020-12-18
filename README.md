@@ -169,6 +169,15 @@ Sometimes it's good to regroup, and put all command in one compact table, we can
 | docker manifest inspect  | Display an image manifest, or manifest list                           |
 | docker manifest push     | Push a manifest list to a repository                                  |
 
+## Test a docker registry for "manifest list" support
+
+This script expects and _requires_ `env vars`. Please run the following: 
+
+```bash
+./test-registry.sh r.myprivreg.com/somerepo
+```
+This will give you the binary answer of yes/no if there is `manifest` support for that DockerHub repo.
+
 ## Using Travis to display the Manifests 
 
 ```yaml
