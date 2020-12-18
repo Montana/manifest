@@ -246,10 +246,9 @@ docker manifest annotate 00.00.00.00:5000/cool-ibm-test-linux:v1 \ 00.00.00.00:5
  
 That's really it for `pushing` a `manifest`. There's also arbitrary flags, and the docker heirarch protocol, which are well explained in this document.
 
-Created manifest list 45.55.81.106:5000/coolapp:v1
+
 ```
-
-
+Created manifest list 00.00.00.00:5000/cool-ibm-test-linux:v1
 
 ## Manifest JSON (amd64, arm, s390x, ppc64le)
 
