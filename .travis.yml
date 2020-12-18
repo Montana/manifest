@@ -33,6 +33,7 @@ after_success:
   - docker images
   - docker manifest inspect --verbose lucashalbert/curl
   - docker manifest inspect --insecure lucashalbert/curl
+  - coveralls
 
 branches:
   only:
@@ -41,4 +42,10 @@ branches:
     - /^*-v[0-9]/
     - /^v\d.*$/
     
+notifications:
+  webhooks: https://coveralls.io/webhook
+    
   # .travis.yml created by Montana Mendy for Travis CI & IBM
+  
+
+
