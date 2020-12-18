@@ -122,6 +122,23 @@ ln -s /etc/ssl/certs/ca-certificates.crt /etc/docker/certs.d/mydomain.com:5000/c
 
 Likewise, on a `docker manifest push` to an `--insecure` registry, the `--insecure` flag must be specified. If not, read what will happen above (the docker protocol heirarchy does its job). If this is not used with an `insecure` registry, the manifest command fails to find a registry that meets the default requirements, in turn will cause your Travis build to fail. 
 
+## Manifest parent commands 
+
+In this case the `parent command` is the command that `inits` what you want to do with `docker manifest`. It gets a little more complex when `Dockerfile`. For example, the image’s parent image (in a `Dockerfile`) is the image designated in the `FROM` directive in the image’s Dockerfile. All subsequent commands are based on this parent image. A `Dockerfile` with the `FROM scratch` directive uses no parent image, as it creates mostly a base docker image, and example of this would be:
+
+```Dockerfile
+FROM scratch
+WORKDIR /root/
+# Copy the file from the build image
+COPY --from=build /go/src/app .
+CMD ["./app"]
+```
+A table made, to graphically show you the definition of `parent command` for all you visual learners out there, I know I am. 
+
+| Command | Description                          |
+|---------|--------------------------------------|
+| docker  | The base command for the Docker CLI. |
+
 ## Using Travis to display the Manifests 
 
 ```yaml
