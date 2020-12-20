@@ -152,6 +152,9 @@ This flag tells the CLI that this registry call may ignore security concerns lik
 ln -s /etc/ssl/certs/ca-certificates.crt /etc/docker/certs.d/mydomain.com:5000/ca-certificates.crt
 ```
 
+> The `--insecure` flag is not required to annotate a `manifest` list on some occassions -- specifically when specified somewhere else (`.travis.yml`, `Dockerfile`), since annotations are to a locally-stored copy in general, and of course this is of a `manifest` list. You may also skip the `--insecure` flag if you are performing a `docker manifest` inspect on a locally-stored `manifest list`. Be sure to keep in mind that locally-stored `manifest lists` are never used by the engine on a docker pull. So if you run `docker pull` that `manifest` will not be used. 
+
+
 Likewise, on a `docker manifest push` to an `--insecure` registry, the `--insecure` flag must be specified. If not, read what will happen above (the docker protocol heirarchy does its job). If this is not used with an `insecure` registry, the manifest command fails to find a registry that meets the default requirements, in turn will cause your Travis build to fail. 
 
 ## Manifest parent commands 
