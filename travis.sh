@@ -1,6 +1,9 @@
-
 #!/bin/bash
+
 # Exit on any failure
+
+# Author Montana Mendy
+
 set -e
 
 SECONDS=0
@@ -15,13 +18,13 @@ if [ -z "$TRAVIS_BRANCH" ]; then
     exit 1
 fi
 
-# Check if GitHub token set
+# Check if GitHub auth token is set
 if [[ -z "$DOCKER_USERNAME" || -z "$DOCKER_PASSWORD" ]]; then
     echo "Error: DOCKERHUB environment variables not set"
     exit 2
 fi
 
-# Login to dockerhub
+# Login to DockerHub using your env vars you set
 echo "${DOCKER_PASSWORD}" | docker login --username $DOCKER_USERNAME --password-stdin
 
 # Run the build
