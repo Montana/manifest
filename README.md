@@ -4,6 +4,15 @@
 
 # Docker Manifest with Travis CI 
 
+_BEFORE_ you start reading, there might be some things you may want to check out first:
+
+* My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
+* My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
+
+> This is so you can get a better idea how this works after you setup your `env vars`.
+
+## Getting started
+
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
 ```bash
