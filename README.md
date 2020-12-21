@@ -256,10 +256,10 @@ script:
 
 after_success:
   - docker images
-  - docker manifest inspect --verbose lucashalbert/curl
-  - docker manifest inspect --insecure lucashalbert/curl
-  - docker manifest inspect --verbose ppc64le/node
-  - docker manifest inspect --insecure ppc64le/node
+  - docker manifest inspect --verbose lucashalbert/curl # multiarch build
+  - docker manifest inspect --insecure lucashalbert/curl # multiarch build 
+  - docker manifest inspect --verbose ppc64le/node # IBM power build 
+  - docker manifest inspect --insecure ppc64le/node # IBM power build 
 
 branches:
   only:
