@@ -14,7 +14,7 @@ echo "Start Time: ${START_TIME}"
 
 # Check if running in Travis
 if [ -z "$TRAVIS_BRANCH" ]; then 
-    echo "Error: this script is meant to run in Travis CI only"
+    echo "Error: this script is meant to run on Travis CI only"
     exit 1
 fi
 
