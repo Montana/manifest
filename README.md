@@ -305,6 +305,8 @@ On the flip side, we can easily scroll through the `travis logs` and lookout for
 
 ![ppc64le](ppc64le.png) 
 
+> When the exact same `Dockerfile` is built again, a new `digest` in the `manifest` is created for that build, irrespective of the fact, that the same file is being built again and in the same environment. The only difference that makes these two different digests is the `container.key` and the `creation-timestamp`.
+
 ## Create and push a `manifest list`
 
 In order to spawn a `manifest list`, you first create the manifest list locally (localhost) by specifying the constituent images, (you can check them using `docker -ps -a`) if you would like to have included in your `manifest list`. Keep in mind that this is pushed to a docker registry, so if you want to push to a registry other than the docker registry, you need to create your manifest list with the registry name or IP and port. This is similar to tagging an image and pushing it to a foreign registry.
