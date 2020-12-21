@@ -196,6 +196,8 @@ A table made, to graphically show you the definition of `parent command` for all
 |---------|--------------------------------------|
 | docker  | The base command for the Docker CLI. |
 
+The `docker` command, will directly lead us into the next section on the proper usage of `docker manifest`. 
+
 ## Child commands in Docker as it pertains to `manifest` 
 
 Sometimes it's good to regroup, and put all command in one compact table, we can get lost when we are running `docker manifest` in variant. These tables will be great to go back and look at if you have questions about what a command does later. I've made one for the `child` commands for docker `manifest`:
