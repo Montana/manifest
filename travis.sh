@@ -12,9 +12,9 @@ SECONDS=0
 START_TIME=$(date +"%Y%m%dT%H%M%S")
 echo "Start Time: ${START_TIME}"
 
-# Check if running in Travis-CI
+# Check if running in Travis
 if [ -z "$TRAVIS_BRANCH" ]; then 
-    echo "Error: this script is meant to run in Travis-CI only"
+    echo "Error: this script is meant to run in Travis CI only"
     exit 1
 fi
 
