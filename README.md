@@ -626,6 +626,7 @@ function prepare_qemu() {
 
 main "$1" "$2" "$3"
 ```
+> Bash script I edited heavily that shows off qemu, more `docker manifest` options and along with multiarch builds. 
 
 ### Other commands
 
