@@ -27,4 +27,5 @@ fi
 [ "$X" -nt "/etc/passwd" ] && \
       echo "X is a file which is newer than /etc/passwd"
 
-# Author Montana to test `codecov`. Activated by a Cron job set by @Montana with Cronie.
+# Cron test 
+# Author: Montana Mendy
