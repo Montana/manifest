@@ -13,7 +13,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 * My script that tests `crons`. The file as you can tell from the extension is in bash:  [crontest.sh](crontest.sh)
 * My quick print in bash of `"Hello Travis"`. The file is called `ci.sh`, it's in bash -- if you just need a quick printout: [ci.sh](ci.sh)
 
-> This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here. The only that will be being used is the `travis.sh` under the `script:` hook in the `.travis.yml` file. Everything else is optional. 
+> This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here. The only script that will be being used (mandatory) is the `travis.sh` under the `script:` hook in the `.travis.yml` file. Everything else is optional. 
 
 ## Getting started
 
