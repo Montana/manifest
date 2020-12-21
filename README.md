@@ -29,13 +29,14 @@ Then just to make sure you're logged into the proper Travis account run:
 travis whatsup
 ```
 
-It's my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. In this particular example, I grabbed from the `Docker Hub` the following package: 
+It's my own personal opinion, when pushing for `manifests` you should always commit with `-asm` so you're signing off on it so, instead of the regular `git commit -m "whatever"` you'd run `git commit -asm "whatever"`. In this particular example, I grabbed from the `DockerHub` the following packages: 
 
 ```bash
 lucashalbert/curl
+ppc64le/node
 ```
 
-This is the perfect package (`cURL`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
+This is the perfect package (`cURL`) and (`ppc64le`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
 
 ### What are Docker Manifests, why do I need to use manifest? 
 
