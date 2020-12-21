@@ -280,7 +280,11 @@ You should see this in your build at some point, this is reassurance your `env v
 
 ![envvars](dockervars.png)
 
-You'll also want to make sure you're logged into Docker, you can do this via: 
+For some setting the `env vars` in the CLI is the best option, but for others using the Travis CI user interface is easier, and quicker. Click Settings -> Environment Variables then add your `DOCKER` env vars. 
+
+![UI](envvarui.png)
+
+For both cases, you'll also want to make sure you're logged into Docker, you can do this via: 
 
 ```bash
 docker login 
