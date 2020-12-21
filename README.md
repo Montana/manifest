@@ -196,6 +196,8 @@ This will give you the binary answer of yes/no if there is `manifest` support fo
 
 ## Using Travis to display the Manifests 
 
+The following is the [Travis](.travis.yml) file in the repo which also uses [Script](travis.sh) bash script I wrote to complete tasks. 
+
 ```yaml
 ---
 language: shell
