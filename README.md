@@ -284,12 +284,16 @@ For some setting the `env vars` in the CLI is the best option, but for others us
 
 ![UI](envvarui.png)
 
+> We are using the UI to enter the Travis CI `env vars` (rather than the CLI). 
+
 For both cases, you'll also want to make sure you're logged into Docker, you can do this via: 
 
 ```bash
 docker login 
 ``` 
 ![login](login.png)
+
+> Login succeeded! This is crucial to have everything working properly, specifically getting the `docker manifests`. 
 
 That will now set both your Docker username/password as `env vars`. 
 
@@ -319,6 +323,8 @@ You want to use the `--verbose` and `--insecure` flags, to get as much `manifest
 In theory, this doesn't have to be `after_success:` but we want to make the most sense of the `.travis.yml` logs.  Let's see if in particular for example, we can't find the `s390x` manifest: 
 
 ![s390x](s390x.png)
+
+> We are looking at the `s390x manifest`
 
 On the flip side, we can easily scroll through the `travis logs` and lookout for the `manifest` of `ppc64le`: 
 
