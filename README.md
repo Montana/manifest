@@ -8,6 +8,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
+* Heavily edited bash script I customized for this use case entiteld `annotations.sh`: [annotations.sh](annotations.sh)
 
 > This is so you can get a better idea how this works after you setup your `env vars`.
 
