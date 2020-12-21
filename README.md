@@ -463,7 +463,11 @@ When setting `docker manifest inspect` with a `verbose` flag, it's going to be s
 
 ![Verbose](manifest_build.png)
 
-Alternatively you can `grep` the `manifests`. As you can see though, they are in the logs, with a passing build.
+Alternatively you can `grep` the `manifests`. As you can see though, they are in the logs, with a passing build. Just to see how other images work, we will show you the `ppc64le/node` image `manifest`: 
+
+![ppc64lenode](ppc64lenode.png)
+
+In both cases, you get reliable results, pulling from various image you can expect the same thing. 
 
 ### Bash script using more of the manifest ecosystem
 
