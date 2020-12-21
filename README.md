@@ -257,6 +257,7 @@ script:
 after_success:
   - docker images
   - docker manifest inspect --verbose lucashalbert/curl
+  - docker manifest inspect --insecure lucashalbert/curl
   - docker manifest inspect --verbose ppc64le/node
   - docker manifest inspect --insecure ppc64le/node
 
