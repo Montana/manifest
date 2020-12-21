@@ -11,7 +11,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 * Heavily edited bash script I customized for this use case entiteld `annotations.sh`: [annotations.sh](annotations.sh)
 * The mini Python app I created to test within Travis in conjunction with `manifest` entitled `charcount.py`: [charcount.py](charcount.py)
 
-> This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with a test use case I've setup.
+> This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here.
 
 ## Getting started
 
