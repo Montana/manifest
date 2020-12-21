@@ -335,6 +335,19 @@ That's really it for `pushing` a `manifest`. There's also arbitrary flags, and t
 
 > Each layer of the `manifest` is comprised of a JSON file (which looks like the `.config` file we talked about earlier), a `VERSION` file with the string 1.0, and a `layer.tar` file containing the images files. In this particular case above, we are going to inspect `ppc64le/node` from DockerHub in my Ubuntu VM, using VMWare.
 
+You might need to resolve some dependencies if doing `manifest` on Ubuntu, this is fairly easiy:
+
+```bash
+sudo apt install ruby-dev libffi-dev make gcc
+sudo gem install travis
+```
+Then make sure Travis is installed:
+
+```bash
+which travis
+``` 
+
+Then you're good to go, now lets move on to pushing a manifest:
 
 ```
 Created manifest list 00.00.00.00:5000/cool-ibm-test-linux:v1
