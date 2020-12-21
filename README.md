@@ -333,7 +333,7 @@ That's really it for `pushing` a `manifest`. There's also arbitrary flags, and t
 
 ![Manifest Ubuntu](ppc64leubuntu.png)
 
-> Each layer of the `manifest` is comprised of a JSON file (which looks like the `.config` file we talked about earlier), a `VERSION` file with the string 1.0, and a `layer.tar` file containing the images files. In this particular case above, we are going to inspect `ppc64le/node` from DockerHub.
+> Each layer of the `manifest` is comprised of a JSON file (which looks like the `.config` file we talked about earlier), a `VERSION` file with the string 1.0, and a `layer.tar` file containing the images files. In this particular case above, we are going to inspect `ppc64le/node` from DockerHub in my Ubuntu VM, using VMWare.
 
 
 ```
