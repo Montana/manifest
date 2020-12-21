@@ -316,7 +316,7 @@ Alternatively you can run this in your project directory tree via:
 export DOCKER_CLI_EXPERIMENTAL=enabled
 ```
 
-The two lines critical in the `.travis.yml` for the manifests to `print` are the following:
+The lines critical in the `.travis.yml` for the manifests to `print` are the following:
 
 ```yaml
 after_success:
