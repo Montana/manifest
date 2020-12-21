@@ -24,6 +24,15 @@ lucashalbert/curl
 
 This is the perfect package (`cURL`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
 
+### What are Docker Manifests, why do I need to use manifest? 
+
+Any registry or runtime that claims to have Docker distribution v2 API/v2.2 image specification (this can easily be checked) support will be interacting with the various `manifest` types to find out the following things inside a image:
+
+1. What are the _actual_ filesystem content, (layers) will be needed to build the root filesystem for the container.
+
+2. Any specific image config that is necessary to know how to run a container, some are more niche than others for using certain images. For example, information like what command(s) to run when starting the container (as probably represented in the Dockerfile that was used to build the image).
+
+
 ## Docker configuration files 
 
 By default, the Docker command line stores its configuration files in a directory called `.docker` within your `$HOME` directory, this can obviously be changed, but for now we are talking by standard practices. 
