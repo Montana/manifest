@@ -26,7 +26,7 @@ This is the perfect package (`cURL`) to show a multiarch docker image using `ppc
 
 ### What are Docker Manifests, why do I need to use manifest? 
 
-Any registry or runtime that claims to have Docker distribution v2 API/v2.2 image specification (this can easily be checked) support will be interacting with the various `manifest` types to find out the following things inside a image:
+Any registry or runtime that claims to have a certain Docker distribution image specification (this can easily be checked) support will be interacting with the various `manifest` types to find out the following things inside a image:
 
 1. What are the _actual_ filesystem content, (layers) will be needed to build the root filesystem for the container.
 
