@@ -15,6 +15,12 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 
 > This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here. The only script that will be being used (mandatory) is the `travis.sh` under the `script:` hook in the `.travis.yml` file. Everything else is optional. 
 
+You'll want to see this before you can move on which is `travis.sh` getting executed and passing the build:
+
+![Success](success.png)
+
+> My script `travis.sh` passing in the Travis CI build, which means we are off to start seeing `manifests`.
+
 ## Getting started
 
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
