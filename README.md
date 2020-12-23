@@ -84,9 +84,9 @@ The `manifest list` is the “fat manifest” which points to specific image man
 
 ### Why I use cron jobs 
 
-For a build like this, the `cron` and at a services level, it can enable programmers to schedule tasks to run at a specific time in the future. You can think of it as setting a coffee maker. The at service specifies a one-time task that runs at a certain time. The `cron` service can schedule tasks on a repetitive basis and in rapid succession, such as daily, weekly, or monthly tasks that involve almost anything:
+For a build like this, the `cron` and at a services level, it can enable programmers to schedule tasks to run at a specific time in the future. You can think of it as setting a coffee maker. The at service specifies a one-time task that runs at a certain time. The `cron` service can schedule tasks on a repetitive basis and in rapid succession, such as daily, weekly, or monthly tasks that involve almost anything.
 
-You'll see some of these `dcrons` around, you'll start why I _personally_ use them. They are _NOT_ for everybody. I made a table of the most common scheduler type crons:
+You'll see some of these `dcrons` around, you'll start why I _personally_ use them. They are _NOT_ for everybody. I made a table of the most common scheduler type crons. You can get a better idea on how to write them and implement them by looking at my [cron_table.sh](cron_table.sh): 
 
 | Version          | Edit crontab | Remove crontab       | New crontab   | List cron-jobs |
 |------------------|--------------|----------------------|---------------|----------------|
