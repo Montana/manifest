@@ -13,7 +13,7 @@
 
 # Randomized check via Cron to have Travis check for failures (esp on Docker images, or bad manifests) 
 
-maxdelay=$((14*60))  # 14 hours from 9am to 11pm, converted to minutes
+maxdelay=$((14*60)) # 14 hours from 9am to 11pm, converted to minutes
 for ((i=1; i<=20; i++)); do
     delay=$(($RANDOM%maxdelay)) 
     (sleep $((delay*60)); /path/to/script) & 
