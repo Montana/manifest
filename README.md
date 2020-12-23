@@ -77,6 +77,10 @@ This particular flag only applies to whatever command is being called. For persi
 echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
 ```
 
+## Fat Manifest
+
+The `manifest list` is the “fat manifest” which points to specific image manifests for one or various platforms or architectures. Its use is optional, and relatively few images will use one of these manifests. You can distinguish via the content-Type returned in a `HTTP` response usually.
+
 ### Why I use cron jobs 
 
 For a build like this, the `cron` and at a services level, it can enable programmers to schedule tasks to run at a specific time in the future. You can think of it as setting a coffee maker. The at service specifies a one-time task that runs at a certain time. The `cron` service can schedule tasks on a repetitive basis and in rapid succession, such as daily, weekly, or monthly tasks that involve almost anything:
