@@ -18,3 +18,8 @@ for ((i=1; i<=20; i++)); do
     delay=$(($RANDOM%maxdelay)) 
     (sleep $((delay*60)); /path/to/script) & 
 done
+
+# Option for a variant randomization process 
+
+sleep $(($RANDOM%5))
+/path/to/command -param1 -param2 # The params in this case being another bash script with more cron conditionals
