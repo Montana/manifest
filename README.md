@@ -88,7 +88,8 @@ When inspecting a `digest` in a directory tree, it should look similar to this:
 
 ![tree](tree.png)
 
-> Digest readings in a file tree.
+> Docker's JSON config file describes the environment that built the docker image and its history through `manifest` and a good example is above, and the hash beginning with **5d1**.
+(here, `5d1cdcfd1c744987e4916f7815874391b29bff62e3df2d29885683e1b39e4c0a.json`)
 
 ### Why I use cron jobs 
 
