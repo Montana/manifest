@@ -84,7 +84,7 @@ The `manifest list` is the “fat manifest” which points to specific image man
 
 ## Image Digest 
 
-When inspecting a `digest` in a file tree, it should look similar to this:
+When inspecting a `digest` in a directory tree, it should look similar to this:
 
 ![tree](tree.png)
 
