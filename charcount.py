@@ -1,7 +1,7 @@
 # Author Montana Mendy
 
 def charFrequency(userInput):
-    '''This fuction helps to count the char frequency in the given string '''
+    '''This fuction helps to count the char frequency in the given string'''
     userInput = userInput.lower() # convert to lowercase
     dict = {}
     for char in userInput:
