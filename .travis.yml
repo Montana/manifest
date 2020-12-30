@@ -1,6 +1,6 @@
 ---
 language: shell
-dist: focal
+dist: xenial
 sudo: required
 os: linux
 
