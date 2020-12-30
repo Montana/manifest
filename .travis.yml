@@ -38,6 +38,7 @@ after_success:
   - docker manifest inspect --verbose s390x/python
   - docker manifest inspect --insecure s390x/python
   - docker manifest inspect --verbose ibmjava:jre
+  - docker manifest inspect --insecure ibmjava:jre
 
 branches:
   only:
