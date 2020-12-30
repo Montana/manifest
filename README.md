@@ -281,6 +281,8 @@ after_success:
   - docker manifest inspect --insecure lucashalbert/curl # multiarch build 
   - docker manifest inspect --verbose ppc64le/node # IBM power build 
   - docker manifest inspect --insecure ppc64le/node # IBM power build 
+  - docker manifest inspect --verbose s390x/python # IBM Z build 
+  - docker manifest inspect --insecure s390x/python # IBM z build
 
 branches:
   only:
