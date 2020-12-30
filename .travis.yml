@@ -2,6 +2,7 @@
 language: shell
 dist: focal
 sudo: required
+os: linux
 
 services:
   - docker
