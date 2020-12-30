@@ -37,6 +37,7 @@ after_success:
   - docker manifest inspect --insecure ppc64le/node
   - docker manifest inspect --verbose s390x/python
   - docker manifest inspect --insecure s390x/python
+  - docker manifest inspect --verbose ibmjava:jre
 
 branches:
   only:
