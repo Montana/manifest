@@ -12,6 +12,17 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 
 ---
 
+| TypeOf | Filetype       | Travis Pass/Fail |
+|-------------|----------------|------|
+| Script Name | travis.sh      | Pass |
+| Script Name | .travis.yml    | Pass |
+| Script Name | annotations.sh | Pass |
+| Script Name | charcount.py   | Pass |
+| Script Name | crontest.sh    | Pass |
+| Script Name | cron_table.sh  | Pass |
+| Script Name | ci.sh          | Pass |
+| Script Name | caching.sh     | Pass |
+
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
 * Heavily edited bash script I customized for this use case entiteld `annotations.sh`: [annotations.sh](annotations.sh)
@@ -20,6 +31,8 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 * My cron table I made - if you choose to do randomized `cron` checks, or on different days of the week: [cron_table.sh](cron_table.sh)
 * My quick print in bash of `"Hello Travis"`. The file is called `ci.sh`, it's in bash -- if you just need a quick printout: [ci.sh](ci.sh)
 * My bash script on Docker `manifest` caching: [caching.sh](caching.sh)
+
+
 
 > This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here. The only script that will be being used (mandatory) is the `travis.sh` under the `script:` hook in the `.travis.yml` file. Everything else is optional. 
 
