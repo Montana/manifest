@@ -1,8 +1,6 @@
 ---
 language: shell
-sudo: required
-dist: xenial
-os: linux
+dist: focal
 
 services:
   - docker
