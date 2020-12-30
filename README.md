@@ -4,7 +4,7 @@
 
 # Docker Manifest with Travis CI 
 
-_BEFORE_ you start reading, there might be some things you may want to check out first:
+_BEFORE_ you start reading, this guide is only for Travis CI and no other CI provider, also there might be some things you may want to check out first:
 
 ---
 
@@ -12,16 +12,17 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 
 ---
 
-| TypeOf | Filetype       | Travis Pass/Fail |
-|-------------|----------------|------|
-| Bash    | travis.sh      | Pass |
-| YAML    | .travis.yml    | Pass |
-| Bash    | annotations.sh | Pass |
-| Python3 | charcount.py   | Pass |
-| Bash    | crontest.sh    | Pass |
-| Bash    | cron_table.sh  | Pass |
-| Bash    | ci.sh          | Pass |
-| Bash    | caching.sh     | Pass |
+
+| TypeOf  | Filetype                                       | Travis Pass/Fail |
+| ------- | ---------------------------------------------- | ---------------- |
+| Bash    | [travis.sh](travis.sh)                         | Pass             |
+| YAML    | [.travis.yml](.travis.yml)                     | Pass             |
+| Bash    | annotations.sh[annotations.sh](annotations.sh) | Pass             |
+| Python3 | charcount.py[charcount.py](charcount.py)       | Pass             |
+| Bash    | crontest.sh[crontest.sh](crontest.sh)         | Pass             |
+| Bash    | cron_table.sh[cron_table.sh](cron_table.sh)    | Pass             |
+| Bash    | ci.sh    [ci.sh](ci.sh)                        | Pass             |
+| Bash    | caching.sh [caching.sh](caching.sh)            | Pass             |
 
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
