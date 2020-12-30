@@ -322,6 +322,8 @@ after_success:
   - docker manifest inspect --insecure ppc64le/node # IBM power build 
   - docker manifest inspect --verbose s390x/python # IBM Z build 
   - docker manifest inspect --insecure s390x/python # IBM z build
+  - docker manifest inspect --verbose ibmjava:jre # official Docker IBM Java (Multiarch) build
+  - docker manifest inspect --insecure ibmjava:jre # official Docker IBM Java (Multiarch) build
 
 branches:
   only:
