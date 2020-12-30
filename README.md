@@ -41,6 +41,29 @@ You'll want to see this before you can move on which is [travis.sh](travis.sh) g
 
 > My script [travis.sh](travis.sh) passing in the Travis CI build, which means we are off to start seeing `manifests`.
 
+## Branches coming soon
+
+The current stucture (in theory) will look a bit like this:
+
+```
+dat-manifest/master
+│   README.md
+│       
+│
+└───dat-manifest/main
+│   │   README.md
+│   │   Dockerfile.cross (PR)
+│   │
+│   └───dat-manifest/branch3
+│       │   README.md
+│       │   .travis.yml (PR)
+│       │   ...
+│   
+└───dat-manifest/scripts
+    │   cron_table.sh
+    │   travis.sh (PR)
+```
+
 ## Getting started
 
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
@@ -60,6 +83,8 @@ It's my own personal opinion, when pushing for `manifests` you should always com
 ```bash
 lucashalbert/curl
 ppc64le/node
+s390x/python  
+ibmjava:jre 
 ```
 
 This is the perfect package (`cURL`) and (`ppc64le`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
