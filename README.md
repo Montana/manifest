@@ -17,12 +17,12 @@ _BEFORE_ you start reading, this guide is only for Travis CI and no other CI pro
 | ------- | ---------------------------------------------- | ---------------- |
 | Bash    | [travis.sh](travis.sh)                         | Pass             |
 | YAML    | [.travis.yml](.travis.yml)                     | Pass             |
-| Bash    | annotations.sh[annotations.sh](annotations.sh) | Pass             |
-| Python3 | charcount.py[charcount.py](charcount.py)       | Pass             |
-| Bash    | crontest.sh[crontest.sh](crontest.sh)         | Pass             |
-| Bash    | cron_table.sh[cron_table.sh](cron_table.sh)    | Pass             |
-| Bash    | ci.sh    [ci.sh](ci.sh)                        | Pass             |
-| Bash    | caching.sh [caching.sh](caching.sh)            | Pass             |
+| Bash    | [annotations.sh](annotations.sh)               | Pass             |
+| Python3 | [charcount.py](charcount.py)                   | Pass             |
+| Bash    | [crontest.sh](crontest.sh)                     | Pass             |
+| Bash    | [cron_table.sh](cron_table.sh)                 | Pass             |
+| Bash    | [ci.sh](ci.sh)                                 | Pass             |
+| Bash    | [caching.sh](caching.sh)                       | Pass             |
 
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
