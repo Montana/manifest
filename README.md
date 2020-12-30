@@ -48,7 +48,7 @@ This is the perfect package (`cURL`) and (`ppc64le`) to show a multiarch docker 
 
 ## Docker Manifest Layers
 
-Docker images have a bunch of layers. For each command in the Dockerfile, Docker generates a layer with all new files, for example `CMD`. So, each layer is a set of differences from the previous one, for example below is a `digest` of an React app I'm currently working on:
+Docker images have a bunch of layers. For each command in the `Dockerfile`, Docker generates a layer with all new files, for example `CMD`. So, each layer is a set of differences from the previous one, for example below is a `digest` of an React app I'm currently working on:
 
 ![ReactLayers](layers.png)
 
