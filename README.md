@@ -62,7 +62,7 @@ Docker `manifest` caching is possible, you need to fetch the unique values - but
 ```bash
 docker history -q IMAGE_HERE | grep -v missing && tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
 
-# Alternatively use, # tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
+# Alternatively use, tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
 ```
 This outputs everything, and would suggest if you're into caching. 
 
