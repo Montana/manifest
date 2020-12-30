@@ -8,7 +8,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 
 ---
 
-**NB**: All these scripts, mini programs, and obviously the `.travis.yml` file I've authored pass the Travis build individually, so if they break please revert your branch in GitHub by using `git revert HEAD`. You could also use `git reflog` as well. 
+**NB**: All these scripts, mini programs, and obviously the `.travis.yml` file I've authored pass the Travis build individually, so if they break please revert your branch in GitHub by using `git revert HEAD`. You could also use `git reflog` as well, you _might also_ want to check `git log`, and see `travis whatsup`. 
 
 ---
 
