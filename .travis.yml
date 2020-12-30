@@ -1,6 +1,7 @@
 ---
 language: shell
 dist: focal
+sudo: required
 
 services:
   - docker
