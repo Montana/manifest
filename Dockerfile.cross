@@ -27,7 +27,7 @@ MAINTAINER Lucas Halbert <contactme@lhalbert.xyz>
 
 RUN apk add --no-cache --update ca-certificates curl
 
-# __CROSS__ Delete static qemu binary
+# __CROSS__ Delete static qemu binary or any variants of it 
  __CROSS__RUN rm -f /usr/bin/qemu-${QEMU_ARCH}-static
 
 COPY docker-entrypoint.sh /usr/bin/
