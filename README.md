@@ -13,6 +13,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 * My script that tests `crons`. The file as you can tell from the extension is in bash:  [crontest.sh](crontest.sh)
 * My cron table I made - if you choose to do randomized `cron` checks, or on different days of the week: [cron_table.sh](cron_table.sh)
 * My quick print in bash of `"Hello Travis"`. The file is called `ci.sh`, it's in bash -- if you just need a quick printout: [ci.sh](ci.sh)
+* My bash script on Docker `manifest` caching: [caching.sh](caching.sh)
 
 > This is so you can get a better idea how this works after you setup your `env vars`, and ultimately inject your own 'components' like 'charcount' to have flexibility with the test use case I've setup here. The only script that will be being used (mandatory) is the `travis.sh` under the `script:` hook in the `.travis.yml` file. Everything else is optional. 
 
@@ -54,6 +55,14 @@ Docker images have a bunch of layers. For each command in the `Dockerfile`, Dock
 
 > Showing the typical Docker `digest` and `sha` affiliated with the React app in question.
 
+## Docker Manifest Caching 
+
+Docker `manifest` caching is possible, you need to fetch the unique values - but the short end of this is the following:
+
+```bash
+docker history -q IMAGE_HERE | grep -v missing && tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
+```
+This outputs everything, and would suggest if you're into caching. 
 
 ### What are Docker Manifests, why do I need to use manifest? 
 
