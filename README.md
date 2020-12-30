@@ -6,6 +6,12 @@
 
 _BEFORE_ you start reading, there might be some things you may want to check out first:
 
+---
+
+**NB**: All these scripts, mini programs, and obviously the `.travis.yml` file I've authored pass the Travis build individually, so if they break please revert your branch in GitHub by using `git revert HEAD`. You could also use `git reflog` as well. 
+
+---
+
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
 * Heavily edited bash script I customized for this use case entiteld `annotations.sh`: [annotations.sh](annotations.sh)
