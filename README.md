@@ -45,6 +45,16 @@ ppc64le/node
 
 This is the perfect package (`cURL`) and (`ppc64le`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
 
+
+## Doker Manifest Layers
+
+Docker images have a bunch of layers. For each command in the Dockerfile, Docker generates a layer with all new files, for example `CMD`. So, each layer is a set of differences from the previous one, for example below is a `digest` of an React app I'm currently working on:
+
+![ReactLayers](layers.png)
+
+> Showing the typical Docker `digest` and `sha` affiliated with the React app in question.
+
+
 ### What are Docker Manifests, why do I need to use manifest? 
 
 Any registry or runtime that claims to have a certain Docker distribution image specification (this can easily be checked) support will be interacting with the various `manifest` types to find out the following things inside a image:
