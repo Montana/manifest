@@ -16,7 +16,7 @@ _BEFORE_ you start reading, there might be some things you may want to check out
 |-------------|----------------|------|
 | Bash    | travis.sh      | Pass |
 | YAML    | .travis.yml    | Pass |
-| Script  | annotations.sh | Pass |
+| Bash    | annotations.sh | Pass |
 | Python3 | charcount.py   | Pass |
 | Bash    | crontest.sh    | Pass |
 | Bash    | cron_table.sh  | Pass |
