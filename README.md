@@ -111,7 +111,7 @@ This outputs everything, and would suggest if you're into caching.
 
 ## Breaking the `digest`
 
-When '`ls` the folder, this is how the folder is structured, or should be:
+When `ls the folder, this is how the folder is structured, or should be:
 
 ```
 ├── 1/
