@@ -87,7 +87,7 @@ s390x/python
 ibmjava:jre 
 ```
 
-This is the perfect package (`cURL`) and (`ppc64le`) to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
+These are the perfect packages (`cURL`), (`ppc64le`), (`s390x`), (`ibmjava:jre`), to show a multiarch docker image using `ppc64le`, `s390x`, and it's manifests.
 
 
 ## Docker Manifest Layers
@@ -96,7 +96,7 @@ Docker images have a bunch of layers. For each command in the `Dockerfile`, Dock
 
 ![ReactLayers](layers.png)
 
-> Showing the typical Docker `digest` and `sha` affiliated with the React app in question.
+> Showing the typical Docker `digest` and `sha251` affiliated with the React app in question.
 
 ## Docker Manifest Caching 
 
