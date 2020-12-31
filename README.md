@@ -130,7 +130,7 @@ docker load -i new-a.tar
 Loaded image ID: sha256:24b...975
 ```
 
-The digest equals the`sha256` of the `config.json` file, it runs! 
+The digest equals the `sha256` of the `config.json` file, it runs! 
 
 
 ### What are Docker Manifests, why do I need to use manifest? 
