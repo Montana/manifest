@@ -96,7 +96,7 @@ Docker images have a bunch of layers. For each command in the `Dockerfile`, Dock
 
 ![ReactLayers](layers.png)
 
-> Showing the typical Docker `digest` and `sha251` affiliated with the React app in question.
+> Showing the typical Docker `digest` and `sha256` affiliated with the React app in question.
 
 ## Docker Manifest Caching 
 
@@ -108,6 +108,30 @@ docker history -q IMAGE_HERE | grep -v missing && tar -xOf file.tar manifest.jso
 # Alternatively use, tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
 ```
 This outputs everything, and would suggest if you're into caching. 
+
+## Breaking the `digest`
+
+When '`ls` the folder, this is how the folder is structured, or should be:
+
+```
+├── 1/
+├── 2/
+├── 3/
+├── 4/
+├── config.json
+└── manifest.json
+```
+
+We want to re-tar and reload `docker load`:
+
+```bash
+tar -cf new-a.tar -C a/ .
+docker load -i new-a.tar
+Loaded image ID: sha256:24b...975
+```
+
+The digest equals the`sha256` of the `config.json` file, it runs! 
+
 
 ### What are Docker Manifests, why do I need to use manifest? 
 
@@ -413,6 +437,10 @@ after_success:
   - docker manifest inspect --insecure lucashalbert/curl
   - docker manifest inspect --verbose ppc64le/node
   - docker manifest inspect --insecure ppc64le/node
+  - docker manifest inspect --verbose s390x/
+  - docker manifest inspect --insecure s390x/python
+  - docker manifest inspect --verbose ibmjava:jre 
+  - docker manifest inspect --insecure ibmjava:jre 
   ```
 You want to use the `--verbose` and `--insecure` flags, to get as much `manifest` information as possible. This is true with any build. 
 
