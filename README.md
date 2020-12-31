@@ -132,6 +132,26 @@ Loaded image ID: sha256:24b...975
 
 The digest equals the `sha256` of the `config.json` file, it runs! 
 
+## Check if image:tag combination already exists on DockerHub:
+
+Follow this bash script I edited that will have the image combination search function, either `result` or `null`:
+
+```bash
+#!/usr/bin/env bash
+
+function docker_image_tag_exists() {
+    EXISTS=$(curl -s https://hub.docker.com/v2/repositories/$1/tags/?page_size=10000 | jq -r "[.results? | .[]? | .name == \"$2\"] | any")
+    test ${EXISTS} = true
+}
+
+if docker_image_tag_exists $1 $2; then
+    echo "true"
+else
+    echo "false"
+fi
+```
+This will be a quicky way to check if a particularly Docker `image:tag` combination exists on DockerHub, so you can quickly make decisions and possibly `grep` image name combos, and get `manifests` quicker on certain items. 
+
 
 ### What are Docker Manifests, why do I need to use manifest? 
 
