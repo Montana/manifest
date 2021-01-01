@@ -137,7 +137,7 @@ The digest equals the `sha256` of the `config.json` file, it runs!
 Follow this bash script I edited that will have the image combination search function, either `result` or `null`:
 
 ```bash
-#!/usr/bin/bash
+#!/bin/bash
 
 function docker_image_tag_exists() {
     EXISTS=$(curl -s https://hub.docker.com/v2/repositories/$1/tags/?page_size=10000 | jq -r "[.results? | .[]? | .name == \"$2\"] | any")
