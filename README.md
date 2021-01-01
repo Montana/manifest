@@ -103,6 +103,7 @@ Docker images have a bunch of layers. For each command in the `Dockerfile`, Dock
 Docker `manifest` caching is possible, you need to fetch the unique values - but the short end of this is the following:
 
 ```bash
+#!/bin/bash
 docker history -q IMAGE_HERE | grep -v missing && tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
 
 # Alternatively use, tar -xOf file.tar manifest.json | tr , '\n' | grep -o '"Config":".*"' | awk -F ':' '{print $2}' | awk '{print substr($0,2,12)}'
@@ -139,7 +140,7 @@ Follow this bash script I edited that will have the image combination search fun
 ```bash
 #!/bin/bash
 
-function docker_image_tag_exists() {
+func docker_image_tag_exists() {
     EXISTS=$(curl -s https://hub.docker.com/v2/repositories/$1/tags/?page_size=10000 | jq -r "[.results? | .[]? | .name == \"$2\"] | any")
     test ${EXISTS} = true
 }
