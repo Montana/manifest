@@ -519,11 +519,6 @@ which travis
 
 Then you're good to go, now lets move on to pushing a manifest:
 
-```
-Created manifest list 00.00.00.00:5000/cool-ibm-test-linux:v1
-
-## Manifest JSON (amd64, arm, s390x, ppc64le)
-
 ```json
 "schemaVersion": 2,
    "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
