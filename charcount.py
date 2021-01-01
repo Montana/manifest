@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Author Montana Mendy
 
 def charFrequency(userInput):
