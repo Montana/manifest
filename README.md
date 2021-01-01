@@ -147,7 +147,7 @@ function docker_image_tag_exists() {
 if docker_image_tag_exists $1 $2; then
     echo "true" # enforces image tag to exist 
 else
-    echo "false"
+    echo "false" # enforces null fetch if image tag doesn't exist
 fi
 ```
 This will be a quicky way to check if a particularly Docker `image:tag` combination exists on DockerHub, so you can quickly make decisions and possibly `grep` image name combos, and get `manifests` quicker on certain items. 
