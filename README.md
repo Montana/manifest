@@ -846,7 +846,7 @@ So for example, you'd run:
 ```bash
  docker manifest inspect cool-ibm-test:v1
  ```
-Then this is what the output you'd expect to see:
+Then this is what the output you'd expect to see, `s390x` along with `ppc64le` for architectures. You can also see `os`, `digest` and of course the `sha256` hash.
 
 ## Inspect a manifest list (`cool-ibm-test`) 
 
