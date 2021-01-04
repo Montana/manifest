@@ -841,11 +841,12 @@ In this example, the only `archs` that are going to be building is:
 ppc64le
 s390x
 ```
-So running the following should output:
+So for example, you'd run:
 
 ```bash
  docker manifest inspect cool-ibm-test:v1
  ```
+Then this is what the output you'd expect to see:
 
 ## Inspect a manifest list (`cool-ibm-test`) 
 
