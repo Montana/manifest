@@ -841,11 +841,15 @@ In this example, the only `archs` that are going to be building is:
 ppc64le
 s390x
 ```
+So running the following should output:
+
+```bash
+ docker manifest inspect cool-ibm-test:v1
+ ```
 
 ## Inspect a manifest list (`cool-ibm-test`) 
 
 ```json
- docker manifest inspect cool-ibm-test:v1
 {
          "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
          "size": 425,
