@@ -875,5 +875,7 @@ Then this is what the output you'd expect to see, `s390x` along with `ppc64le` f
 
 Phew, that was a lot! This should now give you the opportunity to mix and match `docker manifest` with Travis. I haven't seen much on this on GitHub or really anywhere. So it's really my pleasure to share my custom `.travis.yml` file, and show you what works, and I left all my history open -- so you can see where things didn't go so smoothly! I hope you enjoyed the read.
 
+![History](history.png)
+
 ### Author(s)
 Montana Mendy - [Montana](https://github.com/Montana) (Rails Engineer/DevRel @ Travis CI) 
