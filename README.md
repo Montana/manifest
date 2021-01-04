@@ -469,7 +469,7 @@ In theory, this doesn't have to be `after_success:` but we want to make the most
 
 ![s390x](s390x.png)
 
-> We are looking at the `s390x manifest`
+> We are looking at the `s390x manifest`.
 
 On the flip side, we can easily scroll through the `travis logs` and lookout for the `manifest` of `ppc64le`: 
 
@@ -616,7 +616,7 @@ Alternatively you can `grep` the `manifests`. As you can see though, they are in
 
 ![ppc64lenode](ppc64lenode.png)
 
-> We are pulling from ppc64le/node in DockerHub
+> We are pulling from ppc64le/node in DockerHub.
 
 In both cases, you get reliable results, pulling from various images you can expect the same thing. 
 
