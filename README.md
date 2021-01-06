@@ -1,6 +1,6 @@
 ![Header](header.png)
 
-[![Build Status](https://travis-ci.com/Montana/dat-manifest.svg?branch=master)](https://travis-ci.com/Montana/dat-manifest)
+[![Build Status](https://travis-ci.com/Montana/manifest.svg?branch=master)](https://travis-ci.com/Montana/manifest)
 
 # Docker Manifest with Travis CI 
 
