@@ -4,22 +4,6 @@ dist: xenial
 sudo: required
 os: linux
 
-jobs:
-include:
-    - python: 3.7
-      os: linux
-      arch: ppc64le
-      env:
-       - DOWNLOAD_OPENBLAS=1
-       - ATLAS=None
-    - python: 3.7
-      os: linux
-      arch: s390x
-      env:
-       - DOWNLOAD_OPENBLAS=1
-       - NPY_USE_BLAS_ILP64=1
-       - ATLAS=None
-
 services:
   - docker
 
@@ -29,7 +13,7 @@ addons:
       - docker-ce
 
 env:
-  - DEPLOY=false repo=lucashalbert/curl docker_archs="ppc64le s390x"
+  - DEPLOY=false repo=lucashalbert/curl docker_archs="amd64 ppc64le s390x"
   
 install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
