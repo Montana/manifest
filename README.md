@@ -348,7 +348,7 @@ This script expects and _requires_ `env vars`. Please run the following:
 ```
 This will give you the binary answer of yes/no if there is `manifest` support for that DockerHub repo.
 
-![Container Manifest](containermanifest.png) 
+![Container Manifest](container-manifest.png) 
 
 ## Using Travis to display the Manifests 
 
