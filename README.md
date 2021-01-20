@@ -349,6 +349,7 @@ This script expects and _requires_ `env vars`. Please run the following:
 This will give you the binary answer of yes/no if there is `manifest` support for that DockerHub repo.
 
 ![Container Manifest](container-manifest.png) 
+> Flow chart explaining how my `.travis.yml` works.
 
 ## Using Travis to display the Manifests 
 
@@ -370,7 +371,7 @@ addons:
       - docker-ce
 
 env:
-  - DEPLOY=false repo=lucashalbert/curl docker_archs="amd64 ppc64le s390x"
+  - DEPLOY=false repo=ibmjava:jre docker_archs="amd64 ppc64le s390x"
 
 install:
   - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
