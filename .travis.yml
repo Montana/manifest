@@ -7,18 +7,7 @@ os: linux
 services:
   - docker
   
-    jobs:
-  include:
-    - stage: Manifest creation
-      install: skip
-      script: skip
-      after_deploy:
-        - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS";
-        - docker manifest create ${NAME}:${VERSION} ${NAME}:${VERSION}-amd64 ${NAME}:${VERSION}-s390x ${NAME}:${VERSION}-ppc64le;
-        - docker manifest annotate ${NAME}:${VERSION} ${NAME}:${VERSION}-amd64 --os linux --arch amd64;
-        - docker manifest annotate ${NAME}:${VERSION} ${NAME}:${VERSION}-s390x --os linux --arch s390x;
-        - docker manifest annotate ${NAME}:${VERSION} ${NAME}:${VERSION}-ppc64le --os linux --arch ppc64le;
-
+  
 addons:
   apt:
     packages:
