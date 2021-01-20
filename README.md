@@ -348,6 +348,8 @@ This script expects and _requires_ `env vars`. Please run the following:
 ```
 This will give you the binary answer of yes/no if there is `manifest` support for that DockerHub repo.
 
+![Container Manifest](containermanifest.png) 
+
 ## Using Travis to display the Manifests 
 
 The following is the [.travis.yml](.travis.yml) file in the repo which also uses [travis.sh](travis.sh) bash script I wrote to complete some of the `env var` tasks, while pushing to the custom `.travis.yml` file I made for this use case.
