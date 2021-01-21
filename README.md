@@ -1059,6 +1059,22 @@ Then this is what the output you'd expect to see, `s390x` along with `ppc64le` f
 
 Phew, that was a lot! This should now give you the opportunity to mix and match `docker manifest` with Travis. I haven't seen much on this on GitHub or really anywhere. So it's really my pleasure to share my custom `.travis.yml` file, and show you what works, and I left all my history open -- so you can see where things didn't go so smoothly! I hope you enjoyed the read.
 
+The Docker container `manifest` is a file that contains data about a container image. Specifically `digest`, `sha256`, and of course `arch`. We can create a `manifes`t which points to images for different architectures so that when using the image on a particular architecture Docker automatically pulls the desired image. The reason for `manifest` is to mainly cross-build docker images.
+
+```export DOCKER_CLI_EXPERIMENTAL=enabled # crucial for manifest to work 
+
+docker manifest create IBM/ibm-image:latest \
+            IBM/ibm-image:latest-${PLATFORM_1} \ # arch s390x (one can assume)
+            IBM/ibm-image:latest-${PLATFORM_2} \ # arch ppc64le (one can assume)
+            
+docker manifest annotate IBM/ibm-image:latest IBM/ibm-image:latest-${PLATFORM_1} --arch ${PLATFORM_1} # arch s390x (one can assume) 
+docker manifest annotate IBM/ibm-image:latest IBM/ibm-image:latest-${PLATFORM_2} --arch ${PLATFORM_2} # arch ppc64le (one can assume)
+
+docker manifest push IBM/ibm-image:latest
+```
+> How `manifest` is used. You first enable experimental CLI functions, create your image, push, then as you can see two archs - `s390x`, and `ppc64le`. 
+
+
 ![History](history.png)
 
 ### Author(s)
