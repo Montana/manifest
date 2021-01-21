@@ -67,6 +67,7 @@ dat-manifest/master
 ## Getting started
 
 ![Gif](https://github.com/Montana/manifest-unicorn/raw/master/manifest.gif)
+> The first thing to do before looking at `manifests` is login through the Docker CLI.
 
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
@@ -164,7 +165,7 @@ Any registry or runtime that claims to have a certain Docker distribution image 
 
 2. Any specific image config that is necessary to know how to run a container, some are more niche than others for using certain images. For example, information like what command(s) to run when starting the container (as probably represented in the Dockerfile that was used to build the image).
 
-In short, The Docker container `manifest` is a file that contains data about a container image. Specifically `digest`, `sha256`, etc. We can create a `manifest` which points to images for different architectures so that when using the image on a particular architecture Docker automatically pulls the desired image. 
+In short, The Docker container `manifest` is a file that contains data about a container image. Specifically `digest`, `sha256`, and most importantly `arch`. We can create a `manifest` which points to images for different architectures so that when using the image on a particular architecture Docker automatically pulls the desired image. 
 
 The main reason for `manifest` is to cross-build docker images.
 
