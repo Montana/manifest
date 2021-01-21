@@ -13,7 +13,7 @@ _BEFORE_ you start reading, this guide is only for Travis CI and no other CI pro
 ---
 
 
-| TypeOf  | Filetype                                       | Travis Pass/Fail |
+| Language | Filetype                                       | Travis Pass/Fail |
 | ------- | ---------------------------------------------- | ---------------- |
 | Bash    | [travis.sh](travis.sh)                         | Pass             |
 | YAML    | [.travis.yml](.travis.yml)                     | Pass             |
@@ -23,6 +23,7 @@ _BEFORE_ you start reading, this guide is only for Travis CI and no other CI pro
 | Bash    | [cron_table.sh](cron_table.sh)                 | Pass             |
 | Bash    | [ci.sh](ci.sh)                                 | Pass             |
 | Bash    | [caching.sh](caching.sh)                       | Pass             |
+| Bash    | [build.sh](build.sh)                           
 
 * My custom `travis.sh` bash script to set this env up: [travis.sh](travis.sh) 
 * My custom `.travis.yml` for this use case: [.travis.yml](.travis.yml)
