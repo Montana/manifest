@@ -66,6 +66,8 @@ dat-manifest/master
 
 ## Getting started
 
+![Gif](https://github.com/Montana/manifest-unicorn/raw/master/manifest.gif)
+
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
 ```bash
@@ -348,6 +350,7 @@ This script expects and _requires_ `env vars`. Please run the following:
 ```
 This will give you the binary answer of yes/no if there is `manifest` support for that DockerHub repo.
 
+
 ![Container Manifest](container-manifest.png) 
 > Flow chart explaining how my `.travis.yml` works.
 
@@ -385,7 +388,8 @@ before_script:
   
 script:
   - chmod u+x ./travis.sh
-  - export DOCKER_CLI_EXPERIMENTAL=enabled
+  - chmod u+x /build.sh
+  - echo '{"experimental":"enabled"}' >> ~/.docker/config.json
 
 after_success:
   - docker images
