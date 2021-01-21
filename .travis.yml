@@ -28,8 +28,8 @@ before_script:
   
 script:
   - chmod u+x ./travis.sh
-  - export DOCKER_CLI_EXPERIMENTAL=enabled
   - chmod u+x ./build.sh
+  - echo '{"experimental":"enabled"}' >> ~/.docker/config.json
 
 after_success:
   - docker images
