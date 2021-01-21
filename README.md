@@ -395,7 +395,7 @@ before_script:
 script:
   - chmod u+x ./travis.sh
   - chmod u+x /build.sh
-  - echo '{"experimental":"enabled"}' >> ~/.docker/config.json
+  - export DOCKER_CLI_EXPERIMENTAL=enabled # crucial to use manifest
 
 after_success:
   - docker images
