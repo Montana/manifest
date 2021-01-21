@@ -67,7 +67,7 @@ dat-manifest/master
 ## Getting started
 
 ![Gif](https://github.com/Montana/manifest-unicorn/raw/master/manifest.gif)
-> The first thing to do before looking at `manifests` is login through the Docker CLI.
+> The first thing to do before looking at `manifests` is loginng into Docker through the Docker CLI.
 
 First thing, you'll need to set your `docker env vars`, you can do this once the repo is created, along with your `.travis.yml` and your `Dockerfile` you can login into Travis from the CLI via:
 
