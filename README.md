@@ -610,7 +610,7 @@ Done. Your build exited with 0.
 ## The `build.sh` script 
 
 ```bash
-#!/bin/bash
+#!/bin/bash -x
 
 for docker_arch in ${docker_archs}; do
     case ${docker_arch} in
