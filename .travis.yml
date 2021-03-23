@@ -29,6 +29,7 @@ before_script:
 script:
   - chmod u+x ./travis.sh
   - chmod u+x ./build.sh
+  - export DOCKER_CLI_EXPERIMENTAL=enabled
   
 
 after_success:
